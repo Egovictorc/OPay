@@ -1,14 +1,25 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Navbar from "./navbar"
+import styled from "styled-components"
 
+
+const headerStyle = `
+background-color: #00AEB5;
+min-height: 577px;
+
+`
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      // background: `#00AEB5`,
+      // background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
+    css={headerStyle}
   >
+    <Navbar />
     <div
       style={{
         margin: `0 auto`,
