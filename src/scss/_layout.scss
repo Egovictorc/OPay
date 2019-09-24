@@ -7,6 +7,7 @@
 
 .register {
     color: #fff !important;
+    background-color: #00AEB5;
     border: 1px solid #fff;
     border-radius: 10px;
 }
@@ -14,14 +15,20 @@
 // HEADER
 .header {
     background-color: #00AEB5;
-  height: 577px;
-  overflow: hidden;
-  padding-top: 2rem;
+    height: 577px;
+    overflow: hidden;
+    padding-top: 2rem;
 }
 
-.header-image {
-    position: relative;
-    bottom: -80px;
+.header-image__container {
+  @media only screen and (max-width: 767px) {
+    display: none !important;
+  }
+//   @media only screen and (max-width: 768px)  and (min-width: 991px) {
+//     position: absolute !important;
+//     left: -5rem !important;
+//   }
+
 }
 
 // COLOR
@@ -31,7 +38,7 @@
 
 // SECTION
 .section {
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .row__class {
@@ -70,3 +77,8 @@
     @extend .animation;
 }
 
+
+.facebook-icon {
+    // height: 22px !important;
+    // width: 22px !important;
+}

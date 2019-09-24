@@ -5,10 +5,11 @@ import styled from "styled-components"
 import { Container, Row, Col } from "react-bootstrap"
 import Badge from "../../images/badge.png"
 import PlaystoreButton from "../../images/playstore-button.png"
+import Loading from "../loading"
 
 
 const OPayFeatures = ({ features }) => (
-    <Container className="section" as="section">
+    features ? (<Container className="section" as="section">
         {features.map(({ node: { image: { localFile }, description, id } }) => (
             <Row key={id}>
                 <Col>
@@ -16,27 +17,27 @@ const OPayFeatures = ({ features }) => (
                 </Col>
 
                 <Col>
-                    <div className="" css={`
+                    <div css={`
                     height: 500px;
                     max-width: 400px;
                     padding-left: 3rem;
                     box-shadow: 2px 2px 2px 2px #e1e1e1`}>
-                        <h4 className="text-capitalize row">
+                        <h4 className="text-capitalize row__class">
                             <img src={Badge} alt="badge" css={`
                       width: 50px; 
                       height: auto;
                       margin-right: 2rem`} />
                             features
                       </h4>
-                        <ul css={`
-                  max-width: `} className="p-0">
+
+                        <ul className="px-0">
                             {description.map(data => (
                                 <li key={data.id} className="styled__list mb-3">
                                     <span className="styled__bullet"></span>{data.content}
                                 </li>
                             ))}
 
-                            <li className="styled__list mt-4">
+                            <li className="styled__list">
                                 <img src={PlaystoreButton} alt="Playstore logo" className="playstore-button" />
                             </li>
                         </ul>
@@ -46,6 +47,9 @@ const OPayFeatures = ({ features }) => (
         )
         )}
     </Container>
+    ) : (
+            <Loading />
+        )
 )
 
 export default OPayFeatures;

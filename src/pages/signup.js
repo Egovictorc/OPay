@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from "../components/layout"
+import Navbar from "../components/navbar"
 
 const signup = () => {
     return (
-        <div>
-            hello from sign up
-        </div>
+        <Layout>
+            <Navbar primary/>
+            hello from signup
+        </Layout>
     )
 }
 

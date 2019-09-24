@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import OPayFeatures from "./OPayFeatures"
-import Loading from "../loading"
+import OPayFeatures from "./features"
 
 
 
-const OPayFeaturesContainer = () => (
+
+const FeaturesContainer = () => (
   <StaticQuery
     query={graphql`
         query OPayFeatures {
@@ -35,7 +35,7 @@ const OPayFeaturesContainer = () => (
     render={(data) => {
       const features = data.OPayFeatures.edges;
       return (
-        data ? (<OPayFeatures features={features} />) : (<Loading />)
+        <OPayFeatures features={features} />
       )
     }
     }
@@ -43,4 +43,4 @@ const OPayFeaturesContainer = () => (
 )
 
 
-export default OPayFeaturesContainer;
+export default FeaturesContainer;

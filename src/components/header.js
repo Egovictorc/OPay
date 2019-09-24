@@ -13,15 +13,15 @@ const Header = ({ title, description, image, siteMetadata }) => (
   <header className="header">
     <Navbar />
     <Container className="">
-      <Row className="justify-content-around" css={`
+      <Row className="justify-content-between p-0" css={`
       max-width: 1024px;
       position: relative;
       bottom: -80px;`}>
-        <Col xs="12" md="5" lg="4">
-          <Image fixed={image.localFile.childImageSharp.fixed} className="" />
+        <Col xs="12" sm="5" md="4" className=" header-image__container">
+          <Image fixed={image.localFile.childImageSharp.fixed} className="header-image" />
         </Col>
 
-        <Col className="p-5 text-white"  xs="12" md="7" lg="6">
+        <Col className="p-5 text-white"  xs="12" sm="11" md="6" lg="6">
           <h1 className="my-3"> {title} </h1>
           <p  className="mb-3"> {description.description} </p>
           <a href="#">

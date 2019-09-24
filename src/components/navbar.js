@@ -10,7 +10,9 @@ const pageLinks = [
   { title: `sign in`, path: `/signin/`, id: 3 },
   { title: `sign up`, path: `/signup`, id: 4, signup: `signup` },
 ]
-const Navbar = () => {
+
+
+const Navbar = ({primary}) => {
 
   const [nav, setNav] = useState({
     show: false,
@@ -24,13 +26,16 @@ const Navbar = () => {
     })
   }
 
+  
+  const titleStyle = classnames("mb-2 mb-md-0 text-capitalize  font-weight-bold", primary ? `color__primary`: `text-white`)
+
   return (
     <nav className="navbar navbar-expand-md navbar-light container">
       <Link
         to="/"
         className="navbar-brand"
         title="egovictor-opay.netlify.com"
-        className="mb-2 mb-md-0 text-capitalize text-white font-weight-bold"
+        className={titleStyle}
         css={`font-size: 1.2em`}
       >
         sample

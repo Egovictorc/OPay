@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Loading from "../loading"
-import OPayHelp from "./OpayHelp"
+import OPayHelp from "./help"
 
 
 const OPayHelpContainer = () => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
     query OPayHelp {
         OPayFiles: allContentfulOPayHelp {
             edges {
@@ -30,17 +30,17 @@ const OPayHelpContainer = () => (
           }
     }`}
 
-        render={
-            (data) => {
-                const OPayData = data.OPayFiles.edges;
-                // console.log(`OPay data::::: `, data)
+    render={
+      (data) => {
+        const OPayData = data.OPayFiles.edges;
+        // console.log(`OPay data::::: `, data)
 
-                return (
-                  data ? (<OPayHelp OPayFiles={OPayData} />) : (<Loading />)
-                )
-            }
-        }
-    />
+        return (
+          <OPayHelp OPayFiles={OPayData} />
+        )
+      }
+    }
+  />
 )
 
 export default OPayHelpContainer;
