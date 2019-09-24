@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import OPayFeatures from "./OPayFeatures"
+import Loading from "../loading"
+
 
 
 const OPayFeaturesContainer = () => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
         query OPayFeatures {
             OPayFeatures: allContentfulOPayFeatures {
                 edges {
@@ -30,13 +32,15 @@ const OPayFeaturesContainer = () => (
             }
         `}
 
-        render={ (data) => {
-                const features = data.OPayFeatures.edges;
-                return (
-                    <OPayFeatures features={features} />)
-            }
-        }
-    />
+    render={(data) => {
+      const features = data.OPayFeatures.edges;
+      return (
+        data ? (<OPayFeatures features={features} />) : (<Loading />)
+      )
+    }
+    }
+  />
 )
+
 
 export default OPayFeaturesContainer;

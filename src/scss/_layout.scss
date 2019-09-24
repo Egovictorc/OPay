@@ -29,12 +29,12 @@
     color: #00AEB5;
 }
 
-// GUTTER 
-.gutter__section {
-    padding-top: 3rem;
+// SECTION
+.section {
+    padding: 2rem;
 }
 
-.gutter__row {
+.row__class {
     margin-bottom: 2rem;
 }
 
@@ -55,5 +55,18 @@
 
 .playstore-button {
     width: 150px;
-    height: 40px;
+    height: auto;
 }
+
+.animation {
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+}
+// LOADING
+.loading {
+    animation-name: loading;
+    @extend .animation;
+}
+

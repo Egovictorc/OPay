@@ -8,7 +8,7 @@ import PlaystoreButton from "../../images/playstore-button.png"
 
 
 const OPayFeatures = ({ features }) => (
-    <Container>
+    <Container className="section" as="section">
         {features.map(({ node: { image: { localFile }, description, id } }) => (
             <Row key={id}>
                 <Col>
@@ -20,8 +20,8 @@ const OPayFeatures = ({ features }) => (
                     height: 500px;
                     max-width: 400px;
                     padding-left: 3rem;
-                    box-shadow: 2px 2px 3px #e1e1e1`}>
-                        <h4 className="text-capitalize gutter__row">
+                    box-shadow: 2px 2px 2px 2px #e1e1e1`}>
+                        <h4 className="text-capitalize row">
                             <img src={Badge} alt="badge" css={`
                       width: 50px; 
                       height: auto;
@@ -36,7 +36,7 @@ const OPayFeatures = ({ features }) => (
                                 </li>
                             ))}
 
-                            <li className="styled__list">
+                            <li className="styled__list mt-4">
                                 <img src={PlaystoreButton} alt="Playstore logo" className="playstore-button" />
                             </li>
                         </ul>

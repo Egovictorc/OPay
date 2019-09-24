@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import Loading from "../loading"
 import OPayHelp from "./OpayHelp"
 
 
@@ -32,10 +33,10 @@ const OPayHelpContainer = () => (
         render={
             (data) => {
                 const OPayData = data.OPayFiles.edges;
-                console.log(`OPay data::::: `, data)
+                // console.log(`OPay data::::: `, data)
 
                 return (
-                    <OPayHelp OPayFiles={OPayData} />
+                  data ? (<OPayHelp OPayFiles={OPayData} />) : (<Loading />)
                 )
             }
         }

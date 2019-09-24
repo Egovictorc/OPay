@@ -5,8 +5,8 @@ import { Container, Row, Col } from "react-bootstrap"
 
 
 const OPayHelp = ({ OPayFiles }) => (
-    <Container className="gutter__section" as="section">
-        <Row className="gutter__row">
+    <Container className="section" as="section">
+        <Row className="row__class">
             <Col as="h2" className="color__primary">
             How OPay can help you
             </Col>
@@ -14,7 +14,7 @@ const OPayHelp = ({ OPayFiles }) => (
         <Row>
             {OPayFiles.map(
                 ({node: { id, title, description: { description }, image: { localFile } } }) => (
-                <Col key={id} xs="8" sm="6" md="4" lg="3" className="mx-auto gutter__row">
+                <Col key={id} xs="8" sm="6" md="4" lg="3" className="mx-auto row__class">
                     <Image fixed={localFile.childImageSharp.fixed} className="mb-3" />
                     <h4 className="text-capitalize mb-3"> {title} </h4>
                     <p> {description} </p>
