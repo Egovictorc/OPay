@@ -1,0 +1,59 @@
+// NAVIGATION
+.nav-link {
+    color: #000 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.register {
+    color: #fff !important;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+// HEADER
+.header {
+    background-color: #00AEB5;
+  height: 577px;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+.header-image {
+    position: relative;
+    bottom: -80px;
+}
+
+// COLOR
+.color__primary {
+    color: #00AEB5;
+}
+
+// GUTTER 
+.gutter__section {
+    padding-top: 3rem;
+}
+
+.gutter__row {
+    margin-bottom: 2rem;
+}
+
+// FEATURES LIST 
+.styled__list {
+    list-style: none;
+}
+
+.styled__bullet {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00AEB5;
+    margin-right: 1.5rem;
+    vertical-align: center;
+}
+
+.playstore-button {
+    width: 150px;
+    height: 40px;
+}

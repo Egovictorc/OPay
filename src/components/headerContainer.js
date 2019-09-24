@@ -3,24 +3,36 @@ import { graphql, useStaticQuery } from "gatsby"
 import Header from "./header"
 
 const HeaderContainer = () => {
-    const { headerImage } = useStaticQuery(graphql`
+    const { headerQuery, siteTitle } = useStaticQuery(graphql`
     query HeaderImage {
-        headerImage: contentfulHeader {
+        headerQuery: contentfulHeader {
+            title
+            description {
+                description
+            }
             image {
               localFile {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
+                    fixed {
+                        ...GatsbyImageSharpFixed
                     }
                 }
               }
             }
           }
+
+          siteTitle: site {
+              siteMetadata {
+                  title
+              }
+          }
     }`)
 
-    const image  = headerImage.image.localFile.childImageSharp.fluid;
+    // const image  = headerImage.image.localFile.childImageSharp.fluid;
     return (
 
-        <Header {...image} />
+        <Header {...headerQuery} {...siteTitle} />
     )
 }
+
+export default HeaderContainer;
