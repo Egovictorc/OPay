@@ -82,3 +82,25 @@
     // height: 22px !important;
     // width: 22px !important;
 }
+
+// FORM
+.form__heading {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.submit__btn {
+    color: #fff;
+    background: #00AEB5;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.first-letter {
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}

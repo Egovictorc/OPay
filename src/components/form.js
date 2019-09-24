@@ -2,7 +2,7 @@ import React from "react"
 import { Field, withFormik } from "formik"
 import * as Yup from "yup"
 import { Container, Row, Col } from "react-bootstrap"
-import SectionHeading from "../sectionHeading"
+import SectionHeading from "./sectionHeading"
 
 const renderText = ({
     form: { errors, touched }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
@@ -23,7 +23,7 @@ const renderText = ({
     )
 }
 
-const SignIn = (props) => {
+const OPayForm = (props) => {
 
     const {
         values,
@@ -37,7 +37,7 @@ const SignIn = (props) => {
 
     return (
         <Container as="section" className="section">
-            <SectionHeading title={`sign in to your account`} className="form__heading" />
+            <SectionHeading title={props.title} className="form__heading" />
             <Row  className="row__class">
                 <Col className="mx-auto" xs="11" sm="8" md="7" lg="6">
                     <form onSubmit={handleSubmit} >
@@ -69,6 +69,6 @@ const schema = Yup.object().shape({
 
 export default withFormik({
     mapPropsToValues: () => ({ name: "", password: "" }),
-    displayName: "SignIn form",
+    displayName: "OPayForm form",
     validationSchema: schema
-})(SignIn)
+})(OPayForm)
