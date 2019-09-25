@@ -26,7 +26,7 @@ const Header = ({ title, description, image, siteMetadata }) => (
         <Col className="p-5 text-white"  xs="12" sm="11" md="6" lg="6">
           <h1 className="my-3"> {title} </h1>
           <p  className="mb-3"> {description.description} </p>
-          <a href="#">
+          <a href="#" className="mt-3 d-inline-block">
             <img src={PlaystoreButton} alt="playstore button" className="img-fluid playstore-button"  />
           </a>
         </Col>

@@ -36,7 +36,7 @@ const Footer = () => {
     <Container
       as="footer" 
       fluid="true" 
-      className="px-5 footer" 
+      className="px-5 mt-3 footer" 
       css={`
       min-height: 400px; `}>
       <Row>
@@ -48,7 +48,11 @@ const Footer = () => {
         </Col>
 
         <Col as="ul" className="nav" xs="auto">
-          {icons.map(({ node: { id, title, image: { localFile } } }) => (
+          {icons.map(
+            ({ node: { 
+              id, 
+              title, 
+              image: { localFile } } }) => (
             <li className="nav-item" key={id}>
               <a href="#" className="nav-link">
                 <Image fixed={localFile.childImageSharp.fixed} alt={title} key={id} className={classnames("img-fluid", (title === "facebook") && "facebook-icon")} />

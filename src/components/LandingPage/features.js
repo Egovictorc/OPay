@@ -43,10 +43,11 @@ const OPayFeatures = ({ features, featuresBg }) => (
                                     </li>
                                 ))}
 
-                                <li className="styled__list">
+                                <li className="styled__list mt-5">
                                     <img src={PlaystoreButton} alt="Playstore logo" className="playstore-button" />
                                 </li>
                             </ul>
+                            
                         </div>
                     </Col>
                 </Row>

@@ -24,7 +24,7 @@ const FeaturesContainer = () => (
                 image {
                   localFile {
                     childImageSharp {
-                      fixed(width: 350) {
+                      fixed(width: 300) {
                         ...GatsbyImageSharpFixed_withWebp
                       }
                     }
