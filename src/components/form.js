@@ -12,7 +12,7 @@ const renderText = ({
     return (
         <div className="form-group">
             <label htmlFor={props.placeholder}> {props.placeholder}</label>
-            <input {...props} {...field} className="form-control" />
+            <input {...props} {...field} className="form-control" aria-label={props.placeholder}/>
 
             {touched[field.name] && errors[field.name] && (
                 <p className="helper-text">
@@ -42,12 +42,23 @@ const OPayForm = (props) => {
             <Row className="row__class">
                 <Col className="mx-auto" xs="11" sm="8" md="7" lg="6">
                     <form onSubmit={handleSubmit} >
-                        <Field component={renderText} name="email" value={values.email} placeholder="Email Address" type="text" onChange={handleChange} onBlur={handleBlur} />
+                        <Field 
+                        component={renderText} 
+                        name="email" 
+                        value={values.email} 
+                        placeholder="Email Address" 
+                        type="text"  />
 
-                        <Field component={renderText} name="password" value={values.password} placeholder="Password" type="text" onChange={handleChange} onBlur={handleBlur} />
+                        <Field 
+                        component={renderText} 
+                        name="password" 
+                        value={values.password} 
+                        placeholder="Password" type="password" />
 
                         {props.confirmPassword &&
-                            <Field component={renderText} name="confirmPassword" value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} placeholder="Confirm Password" />
+                            <Field component={renderText} 
+                            type="password" 
+                            name="confirmPassword" value={values.confirmPassword}  placeholder="Confirm Password" />
                         }
                         <button type="submit" className="submit__btn "> {props.btn} </button>
                     </form>
@@ -55,7 +66,8 @@ const OPayForm = (props) => {
             </Row>
 
             <Row>
-                {props.confirmPassword ? (
+                {
+                    props.confirmPassword ? (
                     <Col className="mx-auto text-center" xs="11" sm="8" md="7" lg="6">
                         <p className="first-letter">already have an account?&nbsp;
                   <Link to={props.path} className="text-danger first-letter d-inline-block nav__link">sign in </Link></p>

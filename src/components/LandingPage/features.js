@@ -37,8 +37,8 @@ const OPayFeatures = ({ features, featuresBg }) => (
                             </h4>
 
                             <ul className="px-0">
-                                {description.map(data => (
-                                    <li key={data.id} className="styled__list mb-3">
+                                {description.map((data, index) => (
+                                    <li key={`${data}-${index}`} className="styled__list mb-3">
                                         <span className="styled__bullet"></span>{data.content}
                                     </li>
                                 ))}

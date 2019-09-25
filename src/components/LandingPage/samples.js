@@ -27,8 +27,8 @@ const Samples = ({ sample, samplesBg }) => {
                                 (node.type === "more") ? (
                                     <Column key={node.id}>
                                         {contents && contents.map(
-                                            ({ content, id }) => (
-                                                <p key={id}> {content}
+                                            ({ content}) => (
+                                                <p key={content}> {content}
                                                     {title && <ColumnTitle title={title} />}
                                                     {<span className="d-block text-capitalize color__primary">learn more</span>}
                                                 </p>))}
@@ -39,7 +39,7 @@ const Samples = ({ sample, samplesBg }) => {
                                             {image && <Image fixed={image} alt={title} />}
                                             {title && <ColumnTitle title={title} />}
                                             {contents && contents.map(
-                                                ({ content, id }) => <p key={id}> {content} </p>
+                                                ({ content, id }, index) => <p key={`${content}-${index}`}> {content} </p>
                                             )}
                                         </Column>
                                     ))
