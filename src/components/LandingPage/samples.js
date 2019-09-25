@@ -12,7 +12,7 @@ const Samples = ({ sample, samplesBg }) => {
         <Background fluid={samplesBg}>
             <Container>
                 {/* MEET SAMPLE */}
-                <SectionHeading title={`Meet Sample`} className=" offset-md-4 offset-lg-3" />
+                <SectionHeading title={`Meet Sample`} className=" offset-1  offset-sm-0 offset-md-4 offset-lg-3" />
 
                 <Row>
                     {

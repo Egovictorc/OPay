@@ -9,7 +9,7 @@ import Line from "../../images/line.png"
 
 const OPayHelp = ({ OPayFiles }) => (
     OPayFiles ? (<Container className="section" as="section">
-        <SectionHeading title={`How OPay can help you`} />
+        <SectionHeading title={`How OPay can help you`} className="offset-1  offset-sm-0" />
         
         <Row>
             {OPayFiles.map(
