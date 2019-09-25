@@ -1,8 +1,17 @@
 import React from "react"
 import { Col } from "react-bootstrap"
+import styled from "styled-components"
 
+const styledColumn = `
+    margin-bottom: 2.5rem;
+    
+    @media only screen and (max-width: 575px) {
+    text-align: center !important;
+    }
+
+`
 const Column = ({ children, ...props }) => (
-    <Col {...props} xs="8" sm="6" md="4" lg="3" className="mx-auto row__class">
+    <Col {...props} xs="10" sm="6" md="4" lg="3" className="mx-auto row__class" css={styledColumn} >
         {children}
     </Col>
 )

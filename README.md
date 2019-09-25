@@ -1,14 +1,13 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<!-- OPay Web Project By Ego Victor  -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://egovictor-opay.netlify.com/">
+    <img alt="Gatsby" src="https://egovictor-opay.netlify.com/static/14e9c303434edbfc39c3df141941c9c4/1f686/building.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+ OPay Web Project
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
@@ -94,4 +93,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+<!-- END -->

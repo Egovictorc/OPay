@@ -4,13 +4,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import Samples from "./samples"
 
 const SamplesContainer = ()=> {
-    const { samples } = useStaticQuery(graphql`
+    const { samples, samplesBg } = useStaticQuery(graphql`
     query OPaySamples{
         samples: allContentfulOPaySamples {
           edges {
             node {
               id
               title
+              type
               description {
                 content
               }
@@ -18,7 +19,7 @@ const SamplesContainer = ()=> {
                 title
                 localFile {
                   childImageSharp {
-                    fixed(width: 200) {
+                    fixed(width: 200, height: 150) {
                       ...GatsbyImageSharpFixed_withWebp
                     }
                   }
@@ -27,11 +28,19 @@ const SamplesContainer = ()=> {
             }
           }
         }
+      samplesBg: file(relativePath: {eq: "samplesBg.png"}) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
       }`)
 
     const result = samples.edges;
+    const { fluid }  = samplesBg.childImageSharp;
     return (
-        <Samples sample={result} />
+        <Samples sample={result} samplesBg={fluid} />
     )
 } 
 

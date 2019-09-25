@@ -9,12 +9,13 @@ import Line from "../../images/line.png"
 
 const OPayHelp = ({ OPayFiles }) => (
     OPayFiles ? (<Container className="section" as="section">
-        
         <SectionHeading title={`How OPay can help you`} />
         
         <Row>
             {OPayFiles.map(
-                ({node: { id, title, 
+                ({node: { 
+                    id, 
+                    title, 
                     description: { description }, 
                     image: { localFile } } 
                 }) => (
@@ -26,8 +27,8 @@ const OPayHelp = ({ OPayFiles }) => (
                 </Column>
             ))}
         </Row>
-
-    </Container>) : (
+    </Container>
+    ) : (
         <Loading />
     )
 )

@@ -1,35 +1,52 @@
 import React from "react"
 import Image from "gatsby-image"
+import Background from "gatsby-background-image"
 import { Container, Row, Col } from "react-bootstrap"
 import SectionHeading from "../sectionHeading"
 import Column, { ColumnTitle } from "../column"
 
 
-const Samples = ({ sample }) => {
+const Samples = ({ sample, samplesBg }) => {
 
     return (
-        <Container>
-            <SectionHeading title={`Meet Samples`} className="offset-md-4 offset-lg-3" />
+        <Background fluid={samplesBg}>
+            <Container>
+                {/* MEET SAMPLE */}
+                <SectionHeading title={`Meet Sample`} className=" offset-md-4 offset-lg-3" />
 
-            <Row>
+                <Row>
+                    {
+                        sample.map(({ node }) => {
+                            const image = node.image ? node.image.localFile.childImageSharp.fixed : null;
+                            const contents = node.description;
+                            const title = node.title;
+                            const type = node.type;
+                            // description && (console.log(`description:::: `, description.description))
 
-                {
-                    sample.map(({ node }) => {
-                        const image = node.image ? node.image.localFile.childImageSharp.fixed : null;
-                        const contents =  node.description;
-                        const title = node.title;
-                        // description && (console.log(`description:::: `, description.description))
-
-                        return (<Column key={node.id}>
-                            {image && <Image fixed={image} alt={title} />}
-                            {title && <ColumnTitle title={title} />}
-                            {contents && contents.map( ({content, id}) => <p key={id}> {content} 
-                            {(node.id === "b97baf0b-a002-561a-be6e-982a7d999739") && <span className="d-block text-capitalize color__primary">learn more</span>} </p>)}
-                        </Column>)
-                    })}
-            </Row>
-        </Container>
-
+                            return (
+                                (node.type === "more") ? (
+                                    <Column key={node.id}>
+                                        {contents && contents.map(
+                                            ({ content, id }) => (
+                                                <p key={id}> {content}
+                                                    {title && <ColumnTitle title={title} />}
+                                                    {<span className="d-block text-capitalize color__primary">learn more</span>}
+                                                </p>))}
+                                        {image && <Image fixed={image} alt={title} />}
+                                    </Column>
+                                ) : (
+                                        <Column key={node.id}>
+                                            {image && <Image fixed={image} alt={title} />}
+                                            {title && <ColumnTitle title={title} />}
+                                            {contents && contents.map(
+                                                ({ content, id }) => <p key={id}> {content} </p>
+                                            )}
+                                        </Column>
+                                    ))
+                        })}
+                </Row>
+            </Container>
+        </Background>
     )
 }
 
