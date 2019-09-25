@@ -13,10 +13,12 @@ const Header = ({ title, description, image, siteMetadata }) => (
   <header className="header">
     <Navbar />
     <Container className="">
-      <Row className="justify-content-between p-0" css={`
-      max-width: 1024px;
-      position: relative;
-      bottom: -80px;`}>
+      <Row className="justify-content-between p-0 header-row"
+      //  css={`
+      // max-width: 1024px;
+      // position: relative;
+      // bottom: -80px;`}
+      >
         <Col xs="12" sm="5" md="4" className=" header-image__container">
           <Image fixed={image.localFile.childImageSharp.fixed} className="header-image" />
         </Col>

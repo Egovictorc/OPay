@@ -27,16 +27,16 @@ const Navbar = ({primary}) => {
   }
 
   
-  const titleStyle = classnames("mb-2 mb-md-0 text-capitalize  font-weight-bold", primary ? `color__primary`: `text-white`)
+  const titleStyle = classnames("mb-2 mb-md-0 text-capitalize font-weight-bold nav__link", primary ? `color__primary`: `text-white`)
 
   return (
     <nav className="navbar navbar-expand-md navbar-light container">
       <Link
         to="/"
-        className="navbar-brand"
         title="egovictor-opay.netlify.com"
         className={titleStyle}
         css={`font-size: 1.2em`}
+        data-type="navbar-brand"
       >
         sample
             {/* OPay Logo */}
@@ -60,7 +60,7 @@ const Navbar = ({primary}) => {
         <ul className="navbar-nav m-0 ml-md-auto">
           {
             pageLinks.map(page => {
-              const linkClass = classnames("nav-link text-capitalize", { register: page.signup })
+              const linkClass = classnames("nav-link text-capitalize nav__link", { register: page.signup })
 
               return (
                 <li
@@ -70,7 +70,7 @@ const Navbar = ({primary}) => {
                   <Link
                     to={page.path}
                     className={linkClass}
-
+                    data-type="navbar"
                   // activeStyle={{ color: `#a1a1a1` }}
                   >
                     {page.title}

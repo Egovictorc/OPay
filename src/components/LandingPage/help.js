@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Container, Row, Col } from "react-bootstrap"
 import Loading from "../loading"
 import SectionHeading from "../sectionHeading"
+import Column, { ColumnTitle } from "../column"
 import Line from "../../images/line.png"
 
 const OPayHelp = ({ OPayFiles }) => (
@@ -13,13 +14,16 @@ const OPayHelp = ({ OPayFiles }) => (
         
         <Row>
             {OPayFiles.map(
-                ({node: { id, title, description: { description }, image: { localFile } } }) => (
-                <Col key={id} xs="8" sm="6" md="4" lg="3" className="mx-auto row__class">
+                ({node: { id, title, 
+                    description: { description }, 
+                    image: { localFile } } 
+                }) => (
+                <Column key={id}>
                     <Image fixed={localFile.childImageSharp.fixed} className="mb-3" />
-                    <h4 className="text-capitalize mb-3"> {title} </h4>
+                    <ColumnTitle title={title} />
                     <img src={Line} alt="line" className="img-fluid mb-3" />
                     <p> {description} </p>
-                </Col>
+                </Column>
             ))}
         </Row>
 

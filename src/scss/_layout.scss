@@ -1,8 +1,21 @@
 // NAVIGATION
-.nav-link {
-    color: #000 !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+.nav__link {
+    
+    &[data-type="navbar"] {
+        // color: #000 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    }
+
+    &[data-type="navbar-brand"]{
+        &:hover {
+            color: rgba(8, 150, 155, 0.932) !important; 
+        } 
+    }
+
+    &:hover {
+        text-decoration: none !important;
+    }
 }
 
 .register {
@@ -18,8 +31,12 @@
     height: 577px;
     overflow: hidden;
     padding-top: 2rem;
-}
 
+   
+}
+// @media only screen and (max-width: 767px) {
+//     // padding-top: 0;
+// }
 .header-image__container {
   @media only screen and (max-width: 767px) {
     display: none !important;
@@ -28,7 +45,16 @@
 //     position: absolute !important;
 //     left: -5rem !important;
 //   }
+}
 
+.header-row {
+    max-width: 1024px;
+    position: relative;
+    bottom: -80px;
+
+    @media only screen and (max-width: 767px) {
+        bottom: -40px;
+    }
 }
 
 // COLOR
@@ -87,6 +113,11 @@
 .form__heading {
     text-align: center;
     text-transform: capitalize;
+}
+
+// HELPER TEXT
+.helper-text {
+    color: rgb(225,0,0);
 }
 
 .submit__btn {

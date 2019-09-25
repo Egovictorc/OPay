@@ -11,12 +11,12 @@ import Loading from "../loading"
 const OPayFeatures = ({ features }) => (
     features ? (<Container className="section" as="section">
         {features.map(({ node: { image: { localFile }, description, id } }) => (
-            <Row key={id}>
-                <Col>
+            <Row key={id} className="justify-content-center justify-content-lg-around">
+                <Col  xs="auto" md="5" lg="4"xl="3">
                     <Image fixed={localFile.childImageSharp.fixed} />
                 </Col>
 
-                <Col>
+                <Col sm="10" md="7" lg="5">
                     <div css={`
                     height: 500px;
                     max-width: 400px;

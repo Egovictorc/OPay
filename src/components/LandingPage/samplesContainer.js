@@ -4,34 +4,34 @@ import { useStaticQuery, graphql } from "gatsby"
 import Samples from "./samples"
 
 const SamplesContainer = ()=> {
-    // const { samples } = useStaticQuery(graphql`
-    // query OPaySamples{
-    //     samples: allContentfulOPaySamples {
-    //         edges {
-    //             node {
-    //               id
-    //               description {
-    //                   content
-    //                   id
-    //               }
-    //               image {
-    //                 localFile {
-    //                   childImageSharp {
-    //                     fixed(height: 500) {
-    //                       ...GatsbyImageSharpFixed_withWebp
-    //                     }
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }     
+    const { samples } = useStaticQuery(graphql`
+    query OPaySamples{
+        samples: allContentfulOPaySamples {
+          edges {
+            node {
+              id
+              title
+              description {
+                content
+              }
+              image {
+                title
+                localFile {
+                  childImageSharp {
+                    fixed(width: 200) {
+                      ...GatsbyImageSharpFixed_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`)
 
-    //     }
-    // }`)
-
-    // const result = samples.edges;
+    const result = samples.edges;
     return (
-        <Samples />
+        <Samples sample={result} />
     )
 } 
 

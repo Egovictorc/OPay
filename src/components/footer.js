@@ -40,9 +40,7 @@ const Footer = () => {
       css={`
       min-height: 400px; `}>
       <Row>
-        <Col as="hr">
-
-        </Col>
+        <Col as="hr" />
       </Row>
       <Row className="justify-content-center justify-content-md-between ">
         <Col as="p" xs="auto" className="">
@@ -51,7 +49,7 @@ const Footer = () => {
 
         <Col as="ul" className="nav" xs="auto">
           {icons.map(({ node: { id, title, image: { localFile } } }) => (
-            <li className="nav-item">
+            <li className="nav-item" key={id}>
               <a href="#" className="nav-link">
                 <Image fixed={localFile.childImageSharp.fixed} alt={title} key={id} className={classnames("img-fluid", (title === "facebook") && "facebook-icon")} />
               </a>
