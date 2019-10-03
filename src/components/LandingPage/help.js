@@ -20,7 +20,7 @@ const OPayHelp = ({ OPayFiles }) => (
                     image: { localFile } } 
                 }) => (
                 <Column key={id}>
-                    <Image fixed={localFile.childImageSharp.fixed} className="mb-3" />
+                    <Image fixed={localFile.childImageSharp.fixed} className="mb-3" alt={title} />
                     <ColumnTitle title={title} />
                     <img src={Line} alt="line" className="img-fluid mb-3" />
                     <p> {description} </p>

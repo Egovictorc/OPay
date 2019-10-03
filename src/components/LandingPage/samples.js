@@ -24,7 +24,7 @@ const Samples = ({ sample, samplesBg }) => {
                             // description && (console.log(`description:::: `, description.description))
 
                             return (
-                                (node.type === "more") ? (
+                                (type === "more") ? (
                                     <Column key={node.id}>
                                         {contents && contents.map(
                                             ({ content}) => (

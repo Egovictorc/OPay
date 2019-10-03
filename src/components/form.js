@@ -12,7 +12,7 @@ const renderText = ({
     return (
         <div className="form-group">
             <label htmlFor={props.placeholder}> {props.placeholder}</label>
-            <input {...props} {...field} className="form-control" aria-label={props.placeholder}/>
+            <input {...field} {...props} className="form-control" aria-label={props.placeholder}/>
 
             {touched[field.name] && errors[field.name] && (
                 <p className="helper-text">
@@ -35,7 +35,6 @@ const OPayForm = (props) => {
         handleSubmit,
     } = props;
 
-
     return (
         <Container as="section" className="section">
             <SectionHeading title={props.title} className="form__heading" />
@@ -45,20 +44,25 @@ const OPayForm = (props) => {
                         <Field 
                         component={renderText} 
                         name="email" 
-                        value={values.email} 
+                        value={values.email}
+                        onChange={handleChange}
                         placeholder="Email Address" 
                         type="text"  />
 
                         <Field 
                         component={renderText} 
                         name="password" 
-                        value={values.password} 
+                        value={values.password}
+                        onChange={handleChange}
                         placeholder="Password" type="password" />
 
                         {props.confirmPassword &&
                             <Field component={renderText} 
+                            value={values.confirmPassword}
+                            onChange={handleChange}
                             type="password" 
-                            name="confirmPassword" value={values.confirmPassword}  placeholder="Confirm Password" />
+                            name="confirmPassword" 
+                            placeholder="Confirm Password" />
                         }
                         <button type="submit" className="submit__btn "> {props.btn} </button>
                     </form>
@@ -92,7 +96,7 @@ const schema = Yup.object().shape({
 })
 
 export default withFormik({
-    mapPropsToValues: () => ({ name: "", password: "", confirmPassword: "" }),
+    mapPropsToValues: () => ({ email: "", password: "", confirmPassword: "" }),
     displayName: "OPayForm form",
     validationSchema: schema
 })(OPayForm)

@@ -9,7 +9,7 @@ const OPayHelpContainer = () => (
     query={graphql`
     query OPayHelp {
         OPayFiles: allContentfulOPayHelp {
-            edges {
+            helpItems: edges {
               node {
                 title
                 image {
@@ -32,15 +32,16 @@ const OPayHelpContainer = () => (
 
     render={
       (data) => {
-        const OPayData = data.OPayFiles.edges;
+        const { helpItems } = data.OPayFiles;
         // console.log(`OPay data::::: `, data)
 
         return (
-          <OPayHelp OPayFiles={OPayData} />
+          <OPayHelp OPayFiles={helpItems} />
         )
       }
     }
   />
 )
+
 
 export default OPayHelpContainer;

@@ -10,7 +10,7 @@ const FeaturesContainer = () => (
     query={graphql`
         query OPayFeatures {
         OPayFeatures: allContentfulOPayFeatures {
-            edges {
+            features: edges {
               node {
                 background {
                   localFile {
@@ -41,7 +41,7 @@ const FeaturesContainer = () => (
       `}
 
     render={(data ) => {
-      const features = data.OPayFeatures.edges;
+      const { features } = data.OPayFeatures;
       const {node: feature} = features.find( (node, index) => index === 0  )
       const { fluid } = feature.background.localFile.childImageSharp;
       return (
